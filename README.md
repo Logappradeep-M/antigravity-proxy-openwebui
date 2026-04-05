@@ -7,10 +7,22 @@
 A **Pipe / Function** for [OpenWebUI](https://openwebui.com) that connects to the [Antigravity Claude Proxy](https://github.com/badrisnarayanan/antigravity-claude-proxy), bringing **Claude and Gemini models** — including thinking/reasoning variants — directly into your OpenWebUI chat interface.
 
 ```
-┌─────────────────┐     ┌─────────────────────────┐     ┌──────────────────────────┐
-│   OpenWebUI     │────▶│  Antigravity Proxy       │────▶│  Antigravity Cloud Code  │
-│  (This Plugin)  │     │  (localhost:8080)         │     │  (Google Cloud APIs)     │
-└─────────────────┘     └─────────────────────────┘     └──────────────────────────┘
+┌──────────────────────┐
+│      OpenWebUI       │
+│    (This Plugin)     │
+└─────────┬────────────┘
+          │
+          ▼
+┌────────────────────────────┐
+│    Antigravity Proxy       │
+│     (localhost:8080)       │
+└─────────┬──────────────────┘
+          │
+          ▼
+┌──────────────────────────────┐
+│  Antigravity Cloud Code      │
+│     (Google Cloud APIs)      │
+└──────────────────────────────┘
 ```
 
 ---
@@ -62,8 +74,6 @@ cd antigravity-claude-proxy
 npm install
 npm start
 ```
-
-> **Node.js 18 or later is required** for the proxy.
 
 **Link a Google account** (required to actually call models):
 
